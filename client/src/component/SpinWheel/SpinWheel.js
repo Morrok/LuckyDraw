@@ -8,7 +8,7 @@ import swal from 'sweetalert';
 export default function SpinWheel(props) {
   const segments = []
   const adminTransfer = async (winner) => {
-    if(props.state.isAdmin != true) {
+    if(props.state.isAdmin !== true) {
       swal({
         title: "Permission Denied",
         text: 'Allowed only for Admin.',
