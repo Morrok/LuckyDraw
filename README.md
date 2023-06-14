@@ -1,8 +1,8 @@
-# Decentralized Voting 
+# Decentralized App 
 
 A decentralized lucky draw game based on [Ethereum blockchain](https://ethereum.org/dapps/) technology.
 
-> This code was cloned from https://github.com/fintechutcc/Voting.
+> This code was reference from https://github.com/fintechutcc/Voting.
 
 ## System Workflow
 
