@@ -1,0 +1,10 @@
+.SpinWheel {
+  font-family: sans-serif;
+  text-align: center;
+}
+#canvas {
+  text-align: center;
+  width: 1500px;
+  height: 800px;
+  padding-left: 450px;
+}
