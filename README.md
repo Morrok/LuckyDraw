@@ -8,6 +8,9 @@ A decentralized lucky draw game based on [Ethereum blockchain](https://ethereum.
 
 A brief explanation on the basic workflow of the application.
 
+- Admin will create a lucky draw instance by launching/deploying the system in a blockchain network (EVM).
+- Then the likely players connect to the same blockchain network register to become a player. Once the number of registrations reaches 6 people, their respective details are sent/displayed in the lucky draw page.
+- The admin then will spin the wheel to find a winner and when get the winner, the admin will confirm the award send to the winner.
 
 ---
 
