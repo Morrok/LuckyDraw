@@ -14,6 +14,7 @@ import LuckyDraw from "../contracts/LuckyDraw.json";
 // CSS
 import "./Home.css";
 import swal from 'sweetalert';
+import 'bootstrap/dist/css/bootstrap.css';
 
 // const buttonRef = React.createRef();
 export default class Home extends Component {
@@ -148,9 +149,9 @@ export default class Home extends Component {
         <div className="container-item attention">
           <div className="text-left">
             <h3>Game rules</h3>
-            <p>1. Limited to a total of 6 players per round and each person can only register once per round.</p>
-            <p>2. Allow persons to register and pay a registration fee of 0.05 ETH per game.</p>
-            <p>3. The winner will receive the total registration fee of everyone and will be required to pay a game fee of 30% of their winnings.</p>
+            <p style={{marginBottom: "0px"}}>1. Limited to a total of 6 players per round and each person can only register once per round.</p>
+            <p style={{marginBottom: "0px"}}>2. Allow persons to register and pay a registration fee of 0.05 ETH per game.</p>
+            <p style={{marginBottom: "0px"}}>3. The winner will receive the total registration fee of everyone and will be required to pay a game fee of 30% of their winnings.</p>
           </div>
         </div>
         <this.renderHome/>
@@ -175,16 +176,6 @@ export default class Home extends Component {
       const onSubmit = (data) => {
         this.registerUser(data);
       };
-    const btn = {
-        display: "block",
-        padding: "10px",
-        margin: "7px",
-        minWidth: "max-content",
-        textAlign: "center",
-        width: "120px",
-        alignSelf: "center",
-      };
-
       return (
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
@@ -195,7 +186,7 @@ export default class Home extends Component {
                   <div className="container-item center-items">
                     <div>
                       <label className="label-home">
-                         Nick Name{" "}
+                         Nick Name:
                         {errors.accountName && <EMsg msg="*required" />}
                         <input
                           className="input-home"
@@ -205,9 +196,11 @@ export default class Home extends Component {
                             required: true,
                           })}
                         />
-                        <button type="submit" style={btn}>
-                          Register{" "}
-                        </button>
+                        <div className="text-center">
+                          <button className="btn btn-outline-primary" type="submit">
+                            Register
+                          </button>
+                        </div>
                       </label>
                      
                     </div>

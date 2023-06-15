@@ -8,6 +8,9 @@ a {
   text-decoration: none;
   color: white;
 }
+a:link {
+  text-decoration: none;
+}
 nav {
   display: flex;
   height: 11vh;
@@ -21,9 +24,11 @@ nav .header {
   font-size: 24px;
   font-weight: bold;
   text-transform: uppercase;
+  color: white;
 }
 nav .header:hover {
   cursor: pointer;
+  color: black;
 }
 nav .navbar-links {
   display: flex;
@@ -36,6 +41,7 @@ nav .navbar-links a {
   font-weight: normal;
   cursor: pointer;
   text-transform: capitalize;
+  color: white;
 }
 nav .navbar-links a:hover {
   cursor: pointer;

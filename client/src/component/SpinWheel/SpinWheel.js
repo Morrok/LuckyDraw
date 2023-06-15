@@ -42,10 +42,6 @@ export default function SpinWheel(props) {
     }).then(function(isConfirm) {
       if (isConfirm) {
         adminTransfer(winner)
-        // swal(
-        //   "Confirmed!",
-        //   'The reward has been sent to "'+ winner + '".',
-        //   "success");
       } else {
         return;
       }

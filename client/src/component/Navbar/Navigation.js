@@ -12,10 +12,10 @@ export default function Navbar() {
       </NavLink>
       <ul
         className="navbar-links"
-        style={{ width: "35%", transform: open ? "translateX(0px)" : "" }}
+        style={{ width: "35%", marginBottom: "0px", transform: open ? "translateX(0px)" : "" }}
       >
          <li>
-          <NavLink to="/LuckyDraw" activeClassName="nav-active">
+          <NavLink to="/LuckyDraw" activeClassName="nav-active" >
             <i className="fas fa-gamepad" /> Lucky Draw
           </NavLink>
         </li>

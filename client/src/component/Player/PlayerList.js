@@ -12,15 +12,6 @@ export function PlayerList(props) {
       .send(options);
     window.location.reload();
   };
-  const btn = {
-    display: "block",
-    padding: "21px",
-    margin: "7px",
-    minWidth: "max-content",
-    textAlign: "center",
-    width: "333px",
-    alignSelf: "center",
-  };
   const renderResults = (player) => {
     return (
       <tr key={player.index}>
@@ -61,7 +52,7 @@ export function PlayerList(props) {
             </div>
             {props.state.isAdmin === true ? (
               <div className="container-item">
-                <button type="button" onClick={resetPlayer} style={btn}>
+                <button className="btn btn-outline-danger" type="button" onClick={resetPlayer}>
                   Cancel This Round
                 </button>
               </div>
@@ -71,44 +62,5 @@ export function PlayerList(props) {
       </div>
   );
 }
-// function PlayerList(props) {
-//   const renderAdded = (player) => {
-//     return (
-//         <div key={player.index} className="container-list success">
-//           <div
-//             style={{
-//               maxHeight: "21px",
-//               overflow: "auto",
-//             }}
-//           >
-//             {player.index+1}. <strong>{player.playerName}</strong>:{" "}
-//             {player.playerAccount}
-//           </div>
-//         </div>
-//     );
-//   };
-//   return (
-//     <div className="container-main" style={{ borderTop: "1px solid" }}>
-//       <div className="container-item info">
-//         <center>Player List</center>
-//       </div>
-//       {props.players.length < 1 ? (
-//         <div className="container-item alert">
-//           <center>No players added.</center>
-//         </div>
-//       ) : (
-//         <div
-//           className="container-item"
-//           style={{
-//             display: "block",
-//             backgroundColor: "#DDFFFF",
-//           }}
-//         >
-//           {props.players.map(renderAdded)}
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
 
 export default PlayerList;
