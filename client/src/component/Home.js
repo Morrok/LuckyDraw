@@ -145,10 +145,10 @@ export default class Home extends Component {
     return (
       <>
         <Navbar />
-        <div className="container-main"> <h1>Lucky Draw DApp</h1></div>
+        <div className="container-main"> <h2>Lucky Draw DApp</h2></div>
         <div className="container-item attention">
           <div className="text-left">
-            <h3>Game rules</h3>
+            <h4>Game rules</h4>
             <p style={{marginBottom: "0px"}}>1. Limited to a total of 6 players per round and each person can only register once per round.</p>
             <p style={{marginBottom: "0px"}}>2. Allow persons to register and pay a registration fee of 0.05 ETH per game.</p>
             <p style={{marginBottom: "0px"}}>3. The winner will receive the total registration fee of everyone and will be required to pay a game fee of 30% of their winnings.</p>
@@ -182,7 +182,7 @@ export default class Home extends Component {
               <div className="container-main">
                 {/* about-admin */}
                 <div className="about-admin">
-                  <h3>Registation</h3>
+                  <h4>Registation</h4>
                   <div className="container-item center-items">
                     <div>
                       <label className="label-home">

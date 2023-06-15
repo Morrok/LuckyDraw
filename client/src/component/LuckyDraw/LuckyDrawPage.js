@@ -170,7 +170,7 @@ export function displayResults(players, winner, state) {
          <SpinWheel state={state}/>
       ) : null}
       <div className="container-main" style={{ borderTop: "1px solid" }}>
-        <h2>Results History</h2>
+        <h4>Results History</h4>
         {/* <small>Total players: {players.length}</small> */}
         {winner.length < 1 ? (
           <div className="container-item attention">

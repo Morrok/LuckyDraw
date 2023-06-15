@@ -49,7 +49,7 @@ export default function SpinWheel(props) {
   };
   return (
     <div className="SpinWheel">
-      <h1>Spin Wheel</h1>
+      <h2>Lucky Draw</h2>
       <div>
         <WheelComponent
           segments={segments}

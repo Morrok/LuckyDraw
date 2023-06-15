@@ -23,7 +23,7 @@ export function PlayerList(props) {
   };
   return (
       <div className="container-main" style={{ borderTop: "1px solid" }}>
-        <h3>Player List (Round: {props.state.currentRound+1})</h3>
+        <h4>Player List (Round: {props.state.currentRound+1})</h4>
         <small>Total players: {props.state.players.length}</small><br></br>
         
         {props.state.players.length < 1 ? (
