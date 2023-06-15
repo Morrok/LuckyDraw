@@ -123,7 +123,7 @@ export default class LuckyDrawPage extends Component {
         <br />
         <div>
          
-          {this.state.accountCount < 1 ? (
+          {this.state.accountCount < 6 ? (
              
             <div className="container-item attention">
               <center>
@@ -166,7 +166,7 @@ export function displayResults(players, winner, state) {
   };
   return (
     <>
-      {players.length > 0 ? (
+      {players.length === 6 ? (
          <SpinWheel state={state}/>
       ) : null}
       <div className="container-main" style={{ borderTop: "1px solid" }}>

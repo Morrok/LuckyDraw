@@ -101,6 +101,15 @@ export default class Home extends Component {
 
   // register and start election
   registerUser = async (data) => {
+    if(Number(this.state.accountCount) === 6) {
+      console.log('test')
+      swal({
+        title: "Register Failed",
+        text: 'Limited to a total of 6 players per round.',
+        icon: "error"
+      })
+      return;
+    }
     for (let i = 0; i < this.state.players.length; i++) {
       if(this.state.account === this.state.players[i].playerAccount) {
         swal({
@@ -144,7 +153,7 @@ export default class Home extends Component {
             <p>3. The winner will receive the total registration fee of everyone and will be required to pay a game fee of 30% of their winnings.</p>
           </div>
         </div>
-        <this.renderHome />
+        <this.renderHome/>
         <PlayerList state={this.state}/>
       </>
     );
