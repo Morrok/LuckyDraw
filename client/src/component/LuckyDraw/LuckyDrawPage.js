@@ -156,7 +156,11 @@ export function displayResults(players, winner, state) {
       <tr key={winner.round}>
         <td>{winner.round+1}</td>
         <td>{winner.winnerName}</td>
-        <td>{winner.winnerAccount}</td>
+        <td>{winner.winnerAccount}
+          {winner.winnerName === '' ? (
+            <p style={{ color: "red" }}>(This game has been cancelled)</p>
+          ) : null }
+        </td>
       </tr>
     );
   };

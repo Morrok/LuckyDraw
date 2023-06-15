@@ -3,6 +3,24 @@ import React from "react";
 import "./PlayerList.css";
 
 export function PlayerList(props) {
+  const resetPlayer = async () => {
+    let options = {
+      from: props.state.account,
+    }
+    await props.state.LuckyDrawInstance.methods
+      .adminReset()
+      .send(options);
+    window.location.reload();
+  };
+  const btn = {
+    display: "block",
+    padding: "21px",
+    margin: "7px",
+    minWidth: "max-content",
+    textAlign: "center",
+    width: "333px",
+    alignSelf: "center",
+  };
   const renderResults = (player) => {
     return (
       <tr key={player.index}>
@@ -41,6 +59,13 @@ export function PlayerList(props) {
             >
               <center>That is all.</center>
             </div>
+            {props.state.isAdmin === true ? (
+              <div className="container-item">
+                <button type="button" onClick={resetPlayer} style={btn}>
+                  Cancel This Round
+                </button>
+              </div>
+            ): null} 
           </>
         )}
       </div>
