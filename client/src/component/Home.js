@@ -204,8 +204,8 @@ export default class Home extends Component {
                   <div className="container-item center-items">
                     <div>
                       <label className="label-home">
-                         Nick Name:
-                        {errors.accountName && <EMsg msg="*required" />}
+                         Nick Name<span style={{ color: "tomato" }}>*</span>
+                        {errors.accountName && <EMsg msg="required" />}
                         <input
                           className="input-home"
                           type="text"
