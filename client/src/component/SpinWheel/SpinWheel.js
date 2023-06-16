@@ -1,7 +1,6 @@
 import "./SpinWheel.css";
 import WheelComponent from "react-wheel-of-prizes";
 import React from "react";
-
 import swal from 'sweetalert';
 
 
@@ -29,7 +28,7 @@ export default function SpinWheel(props) {
     segments.push( (props.state.players[i].index+1)+"."+props.state.players[i].playerName)
   }
 
-  const segColors = ["#EE4040", "#F0CF50", "#815CD1", "#3DA5E0", "#34A24F"];
+  const segColors = ["#EE4040", "#F0CF50", "#815CD1", "#3DA5E0", "#34A24F", "#FF8C00"];
   const onFinished = (winner) => {
     swal({
       title: "Congratulations!!",
@@ -65,7 +64,6 @@ export default function SpinWheel(props) {
           fontFamily="Arial"
         />
       </div>
-      {/* <h2>Start editing to see some magic happen!</h2> */}
     </div>
   );
 }

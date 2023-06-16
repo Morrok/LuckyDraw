@@ -24,6 +24,7 @@ export default class Home extends Component {
       LuckyDrawInstance: undefined,
       account: null,
       web3: null,
+      adminAccount: null,
       isAdmin: false,
       players: []
     };
@@ -61,6 +62,8 @@ export default class Home extends Component {
       if (this.state.account === adminAccount) {
         this.setState({ isAdmin: true });
       }
+      this.setState({ adminAccount: adminAccount });
+      console.log("Admin: "+ this.state.adminAccount);
 
       // Total number of players
       const accountCount = await this.state.LuckyDrawInstance.methods
@@ -80,8 +83,6 @@ export default class Home extends Component {
         const playerName = await this.state.LuckyDrawInstance.methods
           .mappingAcctName(currentRound, player)
           .call();
-        console.log(playerName)
-        console.log(player)
         this.state.players.push({
           index: i,
           playerName: playerName,
@@ -103,7 +104,6 @@ export default class Home extends Component {
   // register and start election
   registerUser = async (data) => {
     if(Number(this.state.accountCount) === 6) {
-      console.log('test')
       swal({
         title: "Register Failed",
         text: 'Limited to a total of 6 players per round.',
@@ -155,6 +155,24 @@ export default class Home extends Component {
           </div>
         </div>
         <this.renderHome/>
+        <div className="container-main" style={{ borderTop: "1px solid" }}>
+            <h4>Admin Information</h4>
+            <div className="container-item">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Address</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      {this.state.adminAccount}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+        
         <PlayerList state={this.state}/>
       </>
     );

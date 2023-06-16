@@ -76,8 +76,6 @@ export default class LuckyDrawPage extends Component {
         const playerName = await this.state.LuckyDrawInstance.methods
           .mappingAcctName(currentRound, player)
           .call();
-        console.log(playerName)
-        console.log(player)
         this.state.players.push({
           index: i,
           playerName: playerName,
