@@ -11,10 +11,10 @@ contract LuckyDraw is Ownable {
     mapping(uint256 => mapping(address => uint256)) public balances;
     mapping(uint256 => mapping(address => string)) public mappingAcctName;
     mapping(uint256 => address[]) public accounts;
-    mapping(uint256 => WinerInfo) public winner;
+    mapping(uint256 => WinnerInfo) public winner;
     uint256 public currentRound = 0;
 
-    struct WinerInfo {
+    struct WinnerInfo {
         address value_address;
         string value_name;
     }
@@ -55,7 +55,7 @@ contract LuckyDraw is Ownable {
         emit TransferRewardEvent(currentRound, address(this), toAccount, reward);
         payable(owner()).transfer(fee);
         emit TransferFeeEvent(currentRound, address(this), owner(), fee);
-        winner[currentRound] = WinerInfo(toAccount, toName);
+        winner[currentRound] = WinnerInfo(toAccount, toName);
         adminReset();
     }
 
