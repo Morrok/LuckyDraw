@@ -1,8 +1,29 @@
 import React from "react";
 
 import "./PlayerList.css";
+import swal from 'sweetalert';
 
 export function PlayerList(props) {
+
+
+  
+  const onFinished = (winner) => {
+    swal({
+      title: "Cancel Game",
+      text: 'Are you confirm to cancel this round?',
+      icon: "warning",
+      buttons: {
+        confirm: "Confirm",
+        cancel: true,
+      },
+    }).then(function(isConfirm) {
+      if (isConfirm) {
+        resetPlayer()
+      } else {
+        return;
+      }
+    });
+  };
   const resetPlayer = async () => {
     let options = {
       from: props.state.account,
@@ -52,7 +73,7 @@ export function PlayerList(props) {
             </div>
             {props.state.isAdmin === true ? (
               <div className="container-item">
-                <button className="btn btn-outline-danger" type="button" onClick={resetPlayer}>
+                <button className="btn btn-outline-danger" type="button" onClick={onFinished}>
                   Cancel This Round
                 </button>
               </div>
